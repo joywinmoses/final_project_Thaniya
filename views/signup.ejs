@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+    <link rel="stylesheet" href="style_1.css">
+    <!---we had linked our css file----->
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                <a >Travelife</a>
+            </div>
+            
+        </div>
+        <div id="box">
+		
+		<form action="/login" method="post">
+			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
+
+			<input id="text" type="text" name="user_name"  placeholder="Enter the User_name"><br><br>
+			<input id="text" type="password" name="password" placeholder="Enter the Password"><br><br>
+			<input id="text" type="text" name="name" placeholder="Enter your Name"><br><br>
+			<input id="text" type="email" name="email" placeholder="Enter your Email"><br><br>
+			<input id="text" type="number" name="phone" placeholder="Enter your Phone number"><br><br>
+			<input id="text" type="text" name="address" placeholder="Enter your Address"><br><br>
+			
+			<input id="button" type="submit" value="Signup"><br><br>
+
+			<a id="loginbtn" href="login">Click to Login</a><br><br>
+		</form>
+	</div>
+        
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <style type="text/css">
+	
+	#text{
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+		border: solid  #aaa;
+		width: 100%;
+	}
+
+	#button{
+
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: rgb(2, 2, 2);
+		border: solid;
+	}
+
+	#box{
+
+		background-color:rgba(138, 111, 147, 0.598);
+		margin: auto;
+		width: 300px;
+		padding: 20px;
+		border: solid;
+	}
+
+	</style>
+
+
+<script>document.getElementById('loginbtn').addEventListener('click', function() {
+    // Perform a GET request to the /patient URL when the button is clicked
+    fetch('/login')
+        .then(response => response.text())
+        .then(data => {
+            // Replace the current page content with the patient page content
+            document.body.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+</script>
+</body>
+</html>
